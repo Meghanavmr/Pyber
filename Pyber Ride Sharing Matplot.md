@@ -9,7 +9,9 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.pyplot as pltABC
+import matplotlib.pyplot as plta
+import matplotlib.pyplot as pltb
+import matplotlib.pyplot as pltc
 import seaborn as sns
 ```
 
@@ -355,6 +357,59 @@ plt.savefig("Pyber.png")
 
 
 ```python
+# % of Total Fares by City Type
+# tot_city_fare_type = 100 * pyber_data.groupby(["type"]).sum()["fare"] / pyber_data["fare"].sum()
+
+# plta.pie(tot_city_fare_type,
+#         labels =["Urban","Suburban","Rural"],
+#         colors =["gold","lightskyblue","lightcoral"],
+#         explode =[0,0,0.1],
+#         autopct='%1.1f%%',
+#         shadow =True, startangle =150)
+
+# plta.title("%of Total Fares by City Type")
+# plta.savefig("Fig2.png")
+# plta.show()
+        
+```
+
+
+```python
+# % of Total Rides by City Type
+# tot_city_ride_type = 100 * pyber_data.groupby(["type"]).sum()["ride_id"] / pyber_data["ride_id"].count()
+
+# plta.pie(tot_city_fare_type,
+#         labels =["Urban","Suburban","Rural"],
+#         colors =["gold","lightskyblue","lightcoral"],
+#         explode =[0,0,0.1],
+#         autopct='%1.1f%%',
+#         shadow =True, startangle =150)
+
+# plta.title("%of Total Rides by City Type")
+# plta.savefig("Fig2.png")
+# plta.show()
+        
+```
+
+
+```python
+# % of Total Drivers by City Type
+# tot_city_ride_type = 100 * pyber_data.groupby(["type"]).sum()["driver_count"] / pyber_data["driver_count"].mean()
+
+# plta.pie(tot_city_fare_type,
+#         labels =["Urban","Suburban","Rural"],
+#         colors =["gold","lightskyblue","lightcoral"],
+#         explode =[0,0,0.1],
+#         autopct='%1.1f%%',
+#         shadow =True, startangle =150)
+
+# plta.title("%of Total Rides by City Type")
+# plta.savefig("Fig2.png")
+# plta.show()
+```
+
+
+```python
 # def color(row):
 #     type_ = row['type']
 #     if type_=='Urban':
@@ -371,92 +426,9 @@ plt.savefig("Pyber.png")
 
 
 ```python
-# pyber_data_rural_df = city_final_df.loc[city_final_df["type"] == "Rural", :]
-# pyber_data_urban_df = city_final_df.loc[city_final_df["type"] == "Urban", :]
-# pyber_data_suburban_df = city_final_df.loc[city_final_df["type"] == "Suburban", :]
-# type_rural_total_rides = pyber_data_rural_df["Rides Per City"]
-# type_urban_total_rides = pyber_data_urban_df["Rides Per City"]
-# type_suburban_total_rides = pyber_data_suburban_df["Rides Per City"]
-# ride_city_df_rideid_ctr_rural = ride_city_df_group_rural["ride_id"].count()
-# print(type_suburban_total_rides)
-# rural_ride_count = pyber_data_rural_df["ride_id"].count()
-# print(pyber_data_rural_df)
-
-```
-
-
-```python
-#type_map = ["Urban","Suburban","Rural"]
-# plt.scatter(city_total_rides, 
-#             city_avg_fare, 
-#             city_driver_count, 
-#             marker="o", 
-#             c="coral", 
-#             edgecolors="black", 
-# #             color = ['blue']*120,
-#             label = "Urban")
-# plt.scatter(city_total_rides, 
-#             city_avg_fare, 
-#             city_driver_count, 
-#             marker="o", 
-#             c="skyblue", 
-#             edgecolors="black", 
-# #             color = ['red']*120,
-#             label = "Suburban")
-# plt.scatter(city_total_rides, 
-#             city_avg_fare, 
-#             city_driver_count, 
-#             marker="o", 
-#             c="gold", 
-#             edgecolors="black", 
-# #             color = ['green']*120,
-#             label = "Rural")
-# plt.title("Pyber Ride Sharing Data (2016)")
-# plt.xlabel("Total Number of Rides (Per City)")
-# plt.ylabel("Average Fare ($)")
-
-# x=city_total_rides
-# y=city_avg_fare
-# plt.grid()
-# lgnd = plt.legend(fontsize="small", mode="Expanded",
-#                  numpoints=1, scatterpoints=1,
-#                  loc="best", title="City Types")
-# lgnd.legendHandles[0]._sizes = [30]
-# lgnd.legendHandles[1]._sizes = [30]
-# lgnd.legendHandles[2]._sizes = [30]
-
-# plt.show()
-# plt.savefig("Pyber.png")
-```
-
-
-```python
-# % of Total Fares by City Type
-# % of Total Rides by City Type
-# % of Total Drivers by City Type
-
-group_type_df = pyber_data.groupby(["type"])
-Total_fare = group_type_df["fare"].sum()
-Total_rides = group_type_df["ride_id"].count()
-
-
-Total_drivers = city_data.groupby("type")["driver_count"].sum()
-print(Total_drivers)
-```
-
-
-```python
 # Analysis
 
 # Majority of drivers undertake ride sharing between $20 and $30 price range
 # Strategy can be adapted to attract more drivers for a higher fare > $30.
 
-```
-
-
-```python
-3 scatter plot
-then
-
-plot.show
 ```
