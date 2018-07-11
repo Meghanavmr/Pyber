@@ -349,7 +349,7 @@ plt.savefig("Pyber.png")
 
 
 
-    <matplotlib.figure.Figure at 0x236e2785e10>
+    <matplotlib.figure.Figure at 0x15df1f83f60>
 
 
 
@@ -377,9 +377,9 @@ plt.show()
 
 ```python
 #% of Total Rides by City Type
-tot_city_ride_type = 100 * pyber_data.groupby(["type"]).sum()["ride_id"] / pyber_data["ride_id"].count()
+tot_city_ride_type = 100 * pyber_data.groupby(["type"]).count()["ride_id"] / pyber_data["ride_id"].count()
 
-plt.pie(tot_city_fare_type,
+plt.pie(tot_city_ride_type,
         labels =["Urban","Suburban","Rural"],
         colors =["gold","lightskyblue","lightcoral"],
         explode =[0,0,0.1],
@@ -399,16 +399,16 @@ plt.show()
 
 ```python
 #% of Total Drivers by City Type
-tot_city_ride_type = 100 * pyber_data.groupby(["type"]).sum()["driver_count"] / pyber_data["driver_count"].mean()
+tot_city_count_type = 100 * pyber_data.groupby(["type"]).sum()["driver_count"] / pyber_data["driver_count"].sum()
 
-plt.pie(tot_city_fare_type,
+plt.pie(tot_city_count_type,
         labels =["Urban","Suburban","Rural"],
         colors =["gold","lightskyblue","lightcoral"],
         explode =[0,0,0.1],
         autopct='%1.1f%%',
         shadow =True, startangle =150)
 
-plt.title("%of Total Rides by City Type")
+plt.title("%of Total Drivers by City Type")
 plt.savefig("Fig2.png")
 plt.show()
 ```
@@ -417,27 +417,8 @@ plt.show()
 ![png](output_8_0.png)
 
 
-
-```python
-# def color(row):
-#     type_ = row['type']
-#     if type_=='Urban':
-#         color = 'Red'
-#     if type_=='Rural':
-#         color = 'Blue'
-#     if type_=='Suburban':
-#         color = 'Green'
-#     return color
-# pyber_data['color'] = pyber_data.apply(color, axis=1)
-
-# len(city_color)
-```
-
-
-```python
 # Analysis
 
-# Majority of drivers undertake ride sharing between $20 and $30 price range
-# Strategy can be adapted to attract more drivers for a higher fare > $30.
+* Majority of drivers undertake ride sharing between $20 and $30 price range
+* Strategy can be adopted to attract more drivers for a higher fare > $30.
 
-```
