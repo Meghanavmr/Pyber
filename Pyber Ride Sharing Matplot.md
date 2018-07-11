@@ -349,7 +349,7 @@ plt.savefig("Pyber.png")
 
 
 
-    <matplotlib.figure.Figure at 0x15df1f83f60>
+    <matplotlib.figure.Figure at 0x211943abe10>
 
 
 
@@ -358,7 +358,7 @@ plt.savefig("Pyber.png")
 tot_city_fare_type = 100 * pyber_data.groupby(["type"]).sum()["fare"] / pyber_data["fare"].sum()
 
 plt.pie(tot_city_fare_type,
-        labels =["Urban","Suburban","Rural"],
+        labels =["Rural","Suburban","Urban"],
         colors =["gold","lightskyblue","lightcoral"],
         explode =[0,0,0.1],
         autopct='%1.1f%%',
@@ -380,7 +380,7 @@ plt.show()
 tot_city_ride_type = 100 * pyber_data.groupby(["type"]).count()["ride_id"] / pyber_data["ride_id"].count()
 
 plt.pie(tot_city_ride_type,
-        labels =["Urban","Suburban","Rural"],
+        labels =["Rural","Suburban","Urban"],
         colors =["gold","lightskyblue","lightcoral"],
         explode =[0,0,0.1],
         autopct='%1.1f%%',
@@ -402,7 +402,7 @@ plt.show()
 tot_city_count_type = 100 * pyber_data.groupby(["type"]).sum()["driver_count"] / pyber_data["driver_count"].sum()
 
 plt.pie(tot_city_count_type,
-        labels =["Urban","Suburban","Rural"],
+        labels =["Rural","Suburban","Urban"],
         colors =["gold","lightskyblue","lightcoral"],
         explode =[0,0,0.1],
         autopct='%1.1f%%',
@@ -419,6 +419,10 @@ plt.show()
 
 # Analysis
 
-* Majority of drivers undertake ride sharing between $20 and $30 price range
-* Strategy can be adopted to attract more drivers for a higher fare > $30.
+## The total number of rides shared in urban cities is much higher and it ranges from 15 rides to 45 rides as compared to suburban shared rides that falls in an average range of 10 rides to 28 rides and rides in rural cities is much lower as compared to both urban and suburban that ranges from a few rides to 10 rides per city.
+## Overall numbers show that higher number of drivers, have a proportional relationship to the  total number of rides undertaken; urban drivers and rides are proportionally higher (>40 rides are undertaken by more than 80% of the total drivers that are city drivers ).
+## The average fare remained much lower for shared city rides that was between $20 and $30, by contrast, the average fare was much higher for rural shared rides (>$40).
+## As a whole it is evident that urban areas show higher usage of shared rides than that the rural or suburban rides, however, more analysis and data is needed to obtain, for ex: what was the length of ride undertaken, etc.
+
+
 
